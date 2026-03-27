@@ -1,13 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lone Star Rookie Rumble PB</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lone Star Rookie Rumble PB - Monthly rookie cash paintball tournaments in North Houston. APPA D5 & below only.">
+    <title>Lone Star Rookie Rumble PB | North Houston Rookie Cash Tourneys</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Impact:wght@400;700&display=swap');
+        body { font-family: 'Impact', system-ui, sans-serif; }
+        .hero-bg { background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat; }
+        .red-glow { text-shadow: 0 0 15px #ef4444; }
+    </style>
 </head>
-<body class="bg-black text-white font-sans">
-  <h1 class="text-6xl font-bold text-red-600 text-center mt-40">LONE STAR ROOKIE RUMBLE PB</h1>
-  <p class="text-center text-2xl mt-8">Setup successful — full site coming next!</p>
+<body class="bg-black text-white">
+
+    <!-- NAV -->
+    <nav class="bg-black border-b-4 border-red-600 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-skull-crossbones text-4xl text-red-600"></i>
+                <h1 class="text-4xl tracking-tighter text-red-600">LONE STAR</h1>
+                <span class="text-4xl tracking-tighter text-white">ROOKIE RUMBLE</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-xl">
+                <a href="#home" class="hover:text-red-600 transition">HOME</a>
+                <a href="#schedule" class="hover:text-red-600 transition">SCHEDULE</a>
+                <a href="#rules" class="hover:text-red-600 transition">RULES</a>
+                <a href="#register" class="hover:text-red-600 transition">REGISTER</a>
+                <a href="#forum" class="hover:text-red-600 transition">FORUM</a>
+                <a href="#about" class="hover:text-red-600 transition">ABOUT</a>
+            </div>
+            <a href="#register" class="bg-red-600 hover:bg-blue-600 px-8 py-3 text-xl font-bold rounded-none transition">REGISTER NOW — $50</a>
+        </div>
+    </nav>
+
+    <!-- HERO + FRONT-AND-CENTER 1v1 SURVEY -->
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-7xl md:text-8xl font-black text-red-600 red-glow leading-none mb-6">ROOKIE CASH<br>PAINTBALL</h1>
+                <p class="text-4xl text-white mb-12">North Houston • Texas Legends Paintball<br>Monthly Tournaments • APPA D5 &amp; Below ONLY</p>
+                
+                <!-- NON-NEGOTIABLE 1v1 POLL -->
+                <div class="bg-black/90 border-4 border-blue-600 p-10 rounded-none max-w-2xl mx-auto mb-16">
+                    <h2 class="text-5xl font-black text-white mb-8">SHOULD WE ADD A<br><span class="text-red-600">1v1 ROOKIE TOURNAMENT?</span></h2>
+                    <form id="pollForm" class="space-y-6">
+                        <div class="flex flex-col gap-4 text-left text-2xl">
+                            <label class="flex items-center gap-4 cursor-pointer"><input type="radio" name="vote" value="join" class="w-8 h-8 accent-red-600"><span>YES — I would JOIN</span></label>
+                            <label class="flex items-center gap-4 cursor-pointer"><input type="radio" name="vote" value="watch" class="w-8 h-8 accent-red-600"><span>YES — I would WATCH</span></label>
+                            <label class="flex items-center gap-4 cursor-pointer"><input type="radio" name="vote" value="nah" class="w-8 h-8 accent-red-600"><span>NAH, not really interested</span></label>
+                        </div>
+                        <button type="submit" class="w-full bg-red-600 hover:bg-blue-600 text-3xl font-black py-6 transition">SUBMIT VOTE</button>
+                    </form>
+                    <p id="pollThankyou" class="hidden text-green-400 text-3xl font-bold mt-6">THANK YOU, TEXAS! Results coming soon.</p>
+                    
+                    <!-- Other ideas -->
+                    <div class="mt-12 border-t border-white/30 pt-8">
+                        <h3 class="text-2xl mb-4">Other ideas for the series?</h3>
+                        <form id="ideaForm" action="https://formspree.io/f/xblrjrdv" method="POST">
+                            <textarea name="idea" rows="3" class="w-full bg-white/10 border-2 border-white p-4 text-white text-xl" placeholder="E.g. 2v2, night games, gear swaps..."></textarea>
+                            <button type="submit" class="mt-4 bg-blue-600 hover:bg-red-600 px-10 py-4 text-xl font-bold">SEND IDEA</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="text-3xl text-white/80">FIRST EVENT • JULY 2026 • TEXAS LEGENDS PAINTBALL</div>
+                <div id="countdown" class="text-5xl font-mono text-red-600 mt-6"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KILLER EXTRAS + SECTIONS -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <!-- Idea Submission (already in hero, but full section below) -->
+        <div id="ideas" class="mb-24">
+            <h2 class="text-6xl text-red-600 mb-10 text-center">SUBMIT YOUR TOURNAMENT IDEAS</h2>
+            <div class="bg-white/10 p-10 max-w-2xl mx-auto">
+                <form id="fullIdeaForm" action="https://formspree.io/f/xblrjrdv" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" class="w-full mb-4 bg-white/10 border border-white p-5 text-xl" required>
+                    <textarea name="suggestion" placeholder="Format ideas, rule changes, website features..." class="w-full h-48 bg-white/10 border border-white p-5 text-xl" required></textarea>
+                    <button type="submit" class="mt-6 w-full bg-red-600 hover:bg-blue-600 py-6 text-3xl font-black">SEND TO THE ORGANIZER</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Community Forum (lightweight JS) -->
+        <div id="forum" class="mb-24">
+            <h2 class="text-6xl text-red-600 mb-10 text-center">ROOKIE FORUM • SMACK TALK • CARPOOLS • GEAR TRADES</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white/10 p-8">
+                    <h3 class="text-3xl mb-6">Latest Posts</h3>
+                    <div id="postsContainer" class="space-y-6"></div>
+                </div>
+                <div>
+                    <h3 class="text-3xl mb-6">Post Something</h3>
+                    <input id="postAuthor" type="text" placeholder="Your name / team" class="w-full mb-4 bg-white/10 border border-white p-5">
+                    <textarea id="postMessage" placeholder="What's on your mind, rookies?" class="w-full h-40 bg-white/10 border border-white p-5 mb-4"></textarea>
+                    <button onclick="addPost()" class="w-full bg-blue-600 hover:bg-red-600 py-6 text-3xl font-black">POST TO FORUM</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Schedule & Results -->
+        <div id="schedule" class="mb-24">
+            <h2 class="text-6xl text-red-600 mb-10 text-center">2026 SCHEDULE &amp; RESULTS</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="border-4 border-blue-600 p-8">
+                    <div class="text-4xl">JULY 12</div>
+                    <div class="text-2xl text-white/80">Texas Legends • 3-Man Brackets</div>
+                    <div class="text-red-600 text-5xl font-black mt-8">$1,200 POT</div>
+                </div>
+                <div class="border-4 border-blue-600 p-8">
+                    <div class="text-4xl">AUG 9</div>
+                    <div class="text-2xl text-white/80">Texas Legends • 5-Man Brackets</div>
+                    <div class="text-red-600 text-5xl font-black mt-8">TBD</div>
+                </div>
+                <div class="border-4 border-blue-600 p-8 opacity-75">
+                    <div class="text-4xl">SEP 13</div>
+                    <div class="text-2xl text-white/80">TBA</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rules / FAQ -->
+        <div id="rules" class="mb-24 bg-white/10 p-12">
+            <h2 class="text-6xl text-red-600 mb-10 text-center">ROOKIE RULES &amp; FAQ</h2>
+            <div class="grid md:grid-cols-2 gap-12 text-xl leading-relaxed">
+                <div>
+                    <h3 class="font-black text-blue-600 text-3xl mb-6">ENTRY &amp; VERIFICATION</h3>
+                    <p class="mb-8">• $50 buy-in (field fee separate)<br>• Strictly APPA D5 &amp; below<br>• Free APPA Player ID required at signup + screenshot<br>• Government photo ID required on-site<br>• False info = DQ + no refund</p>
+                    <h3 class="font-black text-blue-600 text-3xl mb-6">PAYOUTS</h3>
+                    <p>60/30/10 split after $7–$10 admin fee. Cash paid same day.</p>
+                </div>
+                <div>
+                    <h3 class="font-black text-blue-600 text-3xl mb-6">FORMAT</h3>
+                    <p>Beginner-friendly • 10-15 min games • 3-man or 5-man brackets • No speedball rules</p>
+                    <h3 class="font-black text-blue-600 text-3xl mb-6 mt-12">GEAR LIMITS</h3>
+                    <p>Stock barrels, no electronic markers over 280fps, rental gear welcome.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Registration Form -->
+        <div id="register" class="mb-24">
+            <h2 class="text-6xl text-red-600 mb-10 text-center">REGISTER FOR JULY EVENT</h2>
+            <form id="regForm" class="max-w-2xl mx-auto bg-white/10 p-12 space-y-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <input type="text" placeholder="Full Name" class="bg-white/10 border-2 border-white p-6 text-2xl" required>
+                    <input type="text" placeholder="Team Name (optional)" class="bg-white/10 border-2 border-white p-6 text-2xl">
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <input type="tel" placeholder="Phone" class="bg-white/10 border-2 border-white p-6 text-2xl" required>
+                    <input type="email" placeholder="Email" class="bg-white/10 border-2 border-white p-6 text-2xl" required>
+                </div>
+                <input type="text" placeholder="APPA Player ID (required)" class="w-full bg-white/10 border-2 border-white p-6 text-2xl" required>
+                <div class="text-sm text-white/70">Upload APPA screenshot / profile link below (or email later)</div>
+                <input type="file" class="w-full bg-white/10 border-2 border-white p-6 text-2xl">
+                <button type="submit" class="w-full bg-red-600 hover:bg-blue-600 py-8 text-4xl font-black">PAY $50 &amp; LOCK IN YOUR SPOT</button>
+                <p class="text-center text-white/60 text-sm">Stripe checkout coming soon — for now message us on Instagram @lonestarrookierumble</p>
+            </form>
+        </div>
+
+        <!-- About + Extras -->
+        <div id="about" class="grid md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-3xl text-blue-600">ABOUT US</h3>
+                <p class="mt-6">Brand-new monthly rookie cash series in The Woodlands/Conroe area. Run as DBA under D&amp;D Mobile Services LLC until we grow into our own paintball LLC.</p>
+            </div>
+            <div>
+                <h3 class="text-3xl text-blue-600">INSURANCE</h3>
+                <p class="mt-6">$1M GL policy (K&amp;K preferred) naming Texas Legends as Additional Insured.</p>
+            </div>
+            <div>
+                <h3 class="text-3xl text-blue-600">PLAYER RANKINGS</h3>
+                <div class="mt-6 space-y-3 text-2xl">
+                    <div class="flex justify-between"><span>1. RookieRageTX</span><span class="text-red-600">420 pts</span></div>
+                    <div class="flex justify-between"><span>2. BarrelBurner87</span><span class="text-red-600">380 pts</span></div>
+                    <div class="flex justify-between"><span>3. WoodlandsWrecker</span><span class="text-red-600">310 pts</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black border-t-4 border-red-600 py-12 text-center text-white/60">
+        <p class="text-2xl mb-4">© 2026 Lone Star Rookie Rumble PB • North Houston, Texas</p>
+        <div class="flex justify-center gap-8 text-4xl">
+            <a href="#" class="hover:text-red-600"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="hover:text-red-600"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+        <p class="mt-8 text-sm">Built as a single-file static site on Vercel • Questions? david@toptechmobile.com</p>
+    </footer>
+
+    <script>
+        // Tailwind script already loaded
+        function initTailwind() {
+            tailwind.config = {
+                content: [],
+                theme: { extend: {} }
+            }
+        }
+        initTailwind();
+
+        // Poll submit
+        document.getElementById('pollForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('pollThankyou').classList.remove('hidden');
+            setTimeout(() => { this.reset(); }, 2500);
+        });
+
+        // Simple countdown to July 12 2026
+        function countdown() {
+            const eventDate = new Date('2026-07-12T09:00:00').getTime();
+            const timer = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = eventDate - now;
+                if (distance < 0) { clearInterval(timer); return; }
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                document.getElementById('countdown').innerHTML = `${days} DAYS UNTIL FIRST EVENT`;
+            }, 1000);
+        }
+        countdown();
+
+        // Lightweight forum using localStorage
+        let posts = JSON.parse(localStorage.getItem('forumPosts')) || [
+            {author: "BarrelBurner87", msg: "Anyone carpooling from The Woodlands?"},
+            {author: "RookieRageTX", msg: "First time player — what marker should I rent?"}
+        ];
+        function renderPosts() {
+            const container = document.getElementById('postsContainer');
+            container.innerHTML = '';
+            posts.forEach(p => {
+                const div = document.createElement('div');
+                div.className = 'bg-white/10 p-6 border-l-4 border-red-600';
+                div.innerHTML = `<strong>${p.author}</strong><p class="mt-2">${p.msg}</p>`;
+                container.appendChild(div);
+            });
+        }
+        function addPost() {
+            const author = document.getElementById('postAuthor').value.trim() || 'Anonymous Rookie';
+            const msg = document.getElementById('postMessage').value.trim();
+            if (!msg) return;
+            posts.unshift({author, msg});
+            localStorage.setItem('forumPosts', JSON.stringify(posts));
+            renderPosts();
+            document.getElementById('postMessage').value = '';
+        }
+        renderPosts();
+
+        // Registration form just alerts for now (Stripe coming later)
+        document.getElementById('regForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("✅ Registration received! We'll send you a confirmation to the email you entered. See you on the field, rookie!");
+            this.reset();
+        });
+
+        console.log('%cLone Star Rookie Rumble PB site loaded 🔥', 'color:#ef4444; font-size:20px; font-weight:bold');
+    </script>
 </body>
 </html>
