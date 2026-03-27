@@ -11,7 +11,6 @@
         @import url('https://fonts.googleapis.com/css2?family=Anton&family=Impact:wght@400;700&display=swap');
         body { font-family: 'Impact', system-ui, sans-serif; }
         .hero-bg { background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat; }
-        .red-glow { text-shadow: 0 0 15px #ef4444; }
     </style>
 </head>
 <body class="bg-black text-white">
@@ -40,12 +39,13 @@
     <section id="home" class="hero-bg min-h-screen flex items-center pt-20">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="max-w-4xl mx-auto">
-                <h1 class="text-7xl md:text-8xl font-black text-red-600 red-glow leading-none mb-6">ROOKIE CASH<br>PAINTBALL</h1>
+                <!-- CLEAN HERO TEXT - NO GLOW/SHADOW -->
+                <h1 class="text-7xl md:text-8xl font-black text-red-600 leading-none mb-6 tracking-[-4px]">ROOKIE CASH<br>PAINTBALL</h1>
                 <p class="text-4xl text-white mb-12">North Houston • Texas Legends Paintball<br>Monthly Tournaments • APPA D5 &amp; Below ONLY</p>
                 
-                <!-- NON-NEGOTIABLE 1v1 POLL -->
+                <!-- 1v1 POLL WITH $25 BUY-IN -->
                 <div class="bg-black/90 border-4 border-blue-600 p-10 rounded-none max-w-2xl mx-auto mb-16">
-                    <h2 class="text-5xl font-black text-white mb-8">SHOULD WE ADD A<br><span class="text-red-600">1v1 ROOKIE TOURNAMENT?</span></h2>
+                    <h2 class="text-5xl font-black text-white mb-8">SHOULD WE ADD A<br><span class="text-red-600">1v1 ROOKIE TOURNAMENT?</span><br><span class="text-3xl text-blue-600">($25 BUY-IN)</span></h2>
                     <form id="pollForm" class="space-y-6">
                         <div class="flex flex-col gap-4 text-left text-2xl">
                             <label class="flex items-center gap-4 cursor-pointer"><input type="radio" name="vote" value="join" class="w-8 h-8 accent-red-600"><span>YES — I would JOIN</span></label>
@@ -87,7 +87,7 @@
             </div>
         </div>
 
-        <!-- Community Forum (sharper lettering) -->
+        <!-- Community Forum -->
         <div id="forum" class="mb-24">
             <h2 class="text-6xl text-red-600 mb-10 text-center">ROOKIE FORUM • SMACK TALK • CARPOOLS • GEAR TRADES</h2>
             <div class="grid md:grid-cols-2 gap-8">
@@ -164,7 +164,7 @@
             </form>
         </div>
 
-        <!-- About + Rankings (insurance removed) -->
+        <!-- About + Rankings -->
         <div id="about" class="grid md:grid-cols-2 gap-8">
             <div>
                 <h3 class="text-3xl text-blue-600">ABOUT US</h3>
@@ -216,7 +216,7 @@
         }
         countdown();
 
-        // Forum with sharper lettering
+        // Forum
         let posts = JSON.parse(localStorage.getItem('forumPosts')) || [
             {author: "BarrelBurner87", msg: "Anyone carpooling from The Woodlands?"},
             {author: "RookieRageTX", msg: "First time player — what marker should I rent?"}
