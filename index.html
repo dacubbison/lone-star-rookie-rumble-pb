@@ -27,7 +27,7 @@
         </div>
     </nav>
 
-    <!-- HERO + WORKING 1v1 SURVEY -->
+    <!-- HERO + WORKING 1v1 SURVEY (NO REPEAT VOTES) -->
     <section id="home" class="hero-bg min-h-screen flex items-center pt-16 pb-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
             <div class="max-w-4xl mx-auto">
@@ -47,7 +47,6 @@
                         <button type="submit" id="pollSubmitBtn" class="w-full bg-red-600 hover:bg-blue-600 text-2xl sm:text-3xl font-black py-5 sm:py-6 transition">SUBMIT VOTE</button>
                     </form>
 
-                    <!-- LIVE RESULTS -->
                     <div id="pollResults" class="hidden mt-8">
                         <h3 class="text-2xl font-black mb-6 text-white">LIVE RESULTS — TEXAS HAS SPOKEN</h3>
                         <div id="resultsBars" class="space-y-6"></div>
@@ -69,8 +68,113 @@
         </div>
     </section>
 
-    <!-- REST OF THE SITE (identical to last version) -->
-    <!-- Schedule, Ideas section, Forum, Rules, Register, About, Footer are exactly the same as before -->
+    <!-- SCHEDULE -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+        <div id="schedule" class="mb-16 sm:mb-24">
+            <h2 class="text-5xl sm:text-6xl text-red-600 mb-8 text-center">2026 SCHEDULE &amp; RESULTS</h2>
+            <p class="text-center text-2xl text-blue-600 mb-8 font-bold">3-MAN TOURNAMENT FORMAT — BEGINNER FRIENDLY</p>
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+                <div class="border-4 border-blue-600 p-6 sm:p-8">
+                    <div class="text-3xl sm:text-4xl">MAY 9</div>
+                    <div class="text-xl sm:text-2xl text-white/80">North Houston • 3-Man Brackets</div>
+                    <div class="text-red-600 text-4xl sm:text-5xl font-black mt-6">POT TBD</div>
+                </div>
+                <div class="border-4 border-blue-600 p-6 sm:p-8">
+                    <div class="text-3xl sm:text-4xl">JUNE 12</div>
+                    <div class="text-xl sm:text-2xl text-white/80">North Houston • 3-Man Brackets</div>
+                    <div class="text-red-600 text-4xl sm:text-5xl font-black mt-6">POT TBD</div>
+                </div>
+                <div class="border-4 border-blue-600 p-6 sm:p-8 opacity-75">
+                    <div class="text-3xl sm:text-4xl">JULY 11</div>
+                    <div class="text-xl sm:text-2xl text-white/80">TBA</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- IDEA SUBMISSION -->
+        <div id="ideas" class="mb-16 sm:mb-24">
+            <h2 class="text-5xl sm:text-6xl text-red-600 mb-8 text-center">SUBMIT YOUR TOURNAMENT IDEAS</h2>
+            <div class="bg-white/10 p-8 sm:p-10 max-w-2xl mx-auto">
+                <form id="fullIdeaForm" action="https://formspree.io/f/xblrjrdv" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" class="w-full mb-4 bg-white/10 border border-white p-5 text-xl" required>
+                    <textarea name="suggestion" placeholder="Format ideas, rule changes, website features..." class="w-full h-48 bg-white/10 border border-white p-5 text-xl" required></textarea>
+                    <button type="submit" class="mt-6 w-full bg-red-600 hover:bg-blue-600 py-6 text-3xl font-black">SEND TO THE ORGANIZER</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- FORUM -->
+        <div id="forum" class="mb-16 sm:mb-24">
+            <h2 class="text-5xl sm:text-6xl text-red-600 mb-8 text-center">ROOKIE FORUM • SMACK TALK • CARPOOLS • GEAR TRADES</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white/10 p-8">
+                    <h3 class="text-3xl mb-6">Latest Posts</h3>
+                    <div id="postsContainer" class="space-y-6"></div>
+                </div>
+                <div>
+                    <h3 class="text-3xl mb-6">Post Something</h3>
+                    <input id="postAuthor" type="text" placeholder="Your name / team" class="w-full mb-4 bg-white/10 border border-white p-5">
+                    <textarea id="postMessage" placeholder="What's on your mind, rookies?" class="w-full h-40 bg-white/10 border border-white p-5 mb-4"></textarea>
+                    <button onclick="addPost()" class="w-full bg-blue-600 hover:bg-red-600 py-6 text-3xl font-black">POST TO FORUM</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- RULES -->
+        <div id="rules" class="mb-16 sm:mb-24 bg-white/10 p-8 sm:p-12">
+            <h2 class="text-5xl sm:text-6xl text-red-600 mb-8 text-center">ROOKIE RULES &amp; FAQ</h2>
+            <div class="grid md:grid-cols-2 gap-8 text-lg sm:text-xl leading-relaxed">
+                <div>
+                    <h3 class="font-black text-blue-600 text-3xl mb-6">ENTRY &amp; VERIFICATION</h3>
+                    <p class="mb-8">• $50 buy-in (field fee separate)<br>• $10 admin fee<br>• Strictly APPA D5 &amp; below<br>• Free APPA Player ID required at signup + screenshot<br>• Government photo ID required on-site<br>• False info = DQ + no refund</p>
+                    <h3 class="font-black text-blue-600 text-3xl mb-6">PAYOUTS</h3>
+                    <p>60/30/10 split after $10 admin fee. Cash paid same day.</p>
+                </div>
+                <div>
+                    <h3 class="font-black text-blue-600 text-3xl mb-6">FORMAT</h3>
+                    <p>Beginner-friendly • 10-15 min games • 3-man brackets • No speedball rules</p>
+                    <h3 class="font-black text-blue-600 text-3xl mb-6 mt-12">GEAR LIMITS</h3>
+                    <p>Stock barrels, no electronic markers over 280fps, rental gear welcome.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- REGISTER -->
+        <div id="register" class="mb-16 sm:mb-24">
+            <h2 class="text-5xl sm:text-6xl text-red-600 mb-8 text-center">REGISTER FOR MAY 9 EVENT</h2>
+            <form id="regForm" class="max-w-2xl mx-auto bg-white/10 p-8 sm:p-12 space-y-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <input type="text" placeholder="Full Name" class="bg-white/10 border-2 border-white p-6 text-2xl" required>
+                    <input type="text" placeholder="Team Name (optional)" class="bg-white/10 border-2 border-white p-6 text-2xl">
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <input type="tel" placeholder="Phone" class="bg-white/10 border-2 border-white p-6 text-2xl" required>
+                    <input type="email" placeholder="Email" class="bg-white/10 border-2 border-white p-6 text-2xl" required>
+                </div>
+                <input type="text" placeholder="APPA Player ID (required)" class="w-full bg-white/10 border-2 border-white p-6 text-2xl" required>
+                <div class="text-sm text-white/70">Upload APPA screenshot / profile link below (or email later)</div>
+                <input type="file" class="w-full bg-white/10 border-2 border-white p-6 text-2xl">
+                <button type="submit" class="w-full bg-red-600 hover:bg-blue-600 py-8 text-4xl font-black">PAY $50 &amp; LOCK IN YOUR SPOT</button>
+                <p class="text-center text-white/60 text-sm">Stripe checkout coming soon — for now message us on Instagram @lonestarrookierumble</p>
+            </form>
+        </div>
+
+        <!-- ABOUT -->
+        <div id="about" class="grid md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-3xl text-blue-600">ABOUT US</h3>
+                <p class="mt-6">Brand-new monthly rookie cash series in The Woodlands/Conroe area.</p>
+            </div>
+            <div>
+                <h3 class="text-3xl text-blue-600">PLAYER RANKINGS</h3>
+                <div class="mt-6 space-y-3 text-2xl">
+                    <div class="flex justify-between"><span>1. TBD</span><span class="text-red-600">420 pts</span></div>
+                    <div class="flex justify-between"><span>2. ThisCouldBeYou</span><span class="text-red-600">380 pts</span></div>
+                    <div class="flex justify-between"><span>3. LittleRedRidingHood</span><span class="text-red-600">310 pts</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="bg-black border-t-4 border-red-600 py-12 text-center text-white/60">
         <p class="text-2xl mb-4">© 2026 Lone Star Rookie Rumble PB • North Houston, Texas</p>
@@ -85,7 +189,7 @@
         function initTailwind() { tailwind.config = { content: [], theme: { extend: {} } }; }
         initTailwind();
 
-        // BLOCK REPEAT VOTES + LIVE RESULTS
+        // FIXED POLL - NO REPEAT VOTES + LIVE RESULTS
         let hasVoted = localStorage.getItem('hasVotedPoll') === 'true';
         let votes = JSON.parse(localStorage.getItem('pollVotes')) || { join: 12, watch: 8, nah: 3 };
 
@@ -113,11 +217,9 @@
             e.preventDefault();
             const selected = document.querySelector('input[name="vote"]:checked');
             if (!selected) return;
-            
             votes[selected.value]++;
             localStorage.setItem('pollVotes', JSON.stringify(votes));
             localStorage.setItem('hasVotedPoll', 'true');
-            
             document.getElementById('pollOptions').classList.add('hidden');
             document.getElementById('pollSubmitBtn').classList.add('hidden');
             document.getElementById('pollResults').classList.remove('hidden');
@@ -126,10 +228,10 @@
 
         function resetPoll() {
             localStorage.removeItem('hasVotedPoll');
-            location.reload(); // simple way to reset for demo
+            location.reload();
         }
 
-        // Countdown + Forum + Registration (unchanged)
+        // COUNTDOWN
         function countdown() {
             const eventDate = new Date('2026-05-09T09:00:00').getTime();
             setInterval(() => {
@@ -141,13 +243,38 @@
         }
         countdown();
 
-        // Forum, regForm, etc. remain exactly as before
-        let posts = JSON.parse(localStorage.getItem('forumPosts')) || [{author: "BarrelBurner87", msg: "Anyone carpooling from The Woodlands?"}, {author: "RookieRageTX", msg: "First time player — what marker should I rent?"}];
-        function renderPosts() { /* same as before */ }
-        function addPost() { /* same as before */ }
+        // FORUM
+        let posts = JSON.parse(localStorage.getItem('forumPosts')) || [
+            {author: "BarrelBurner87", msg: "Anyone carpooling from The Woodlands?"},
+            {author: "RookieRageTX", msg: "First time player — what marker should I rent?"}
+        ];
+        function renderPosts() {
+            const container = document.getElementById('postsContainer');
+            container.innerHTML = '';
+            posts.forEach(p => {
+                const div = document.createElement('div');
+                div.className = 'bg-white/10 p-6 border-l-4 border-red-600 text-xl leading-tight';
+                div.innerHTML = `<strong class="text-2xl text-red-600">${p.author}</strong><p class="mt-2 text-white">${p.msg}</p>`;
+                container.appendChild(div);
+            });
+        }
+        function addPost() {
+            const author = document.getElementById('postAuthor').value.trim() || 'Anonymous Rookie';
+            const msg = document.getElementById('postMessage').value.trim();
+            if (!msg) return;
+            posts.unshift({author, msg});
+            localStorage.setItem('forumPosts', JSON.stringify(posts));
+            renderPosts();
+            document.getElementById('postMessage').value = '';
+        }
         renderPosts();
 
-        document.getElementById('regForm').addEventListener('submit', function(e) { /* same alert */ });
+        // REGISTRATION
+        document.getElementById('regForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("✅ Registration received! We'll send you a confirmation to the email you entered. See you on the field, rookie!");
+            this.reset();
+        });
     </script>
 </body>
 </html>
