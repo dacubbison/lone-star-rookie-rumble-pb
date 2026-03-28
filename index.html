@@ -31,11 +31,9 @@
     <section id="home" class="hero-bg min-h-screen flex items-center pt-16 pb-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
             <div class="max-w-4xl mx-auto">
-                <!-- MOBILE-FRIENDLY HERO TEXT -->
                 <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-red-600 leading-none mb-6 tracking-[-3px]">ROOKIE CASH<br>PAINTBALL</h1>
-                <p class="text-2xl sm:text-3xl md:text-4xl text-white mb-10">North Houston • Texas Legends Paintball<br>Monthly Tournaments • APPA D5 &amp; Below ONLY</p>
+                <p class="text-2xl sm:text-3xl md:text-4xl text-white mb-10">North Houston • Monthly Rookie Cash Tournaments<br>APPA D5 &amp; Below ONLY</p>
                 
-                <!-- POLL - SCALED FOR MOBILE -->
                 <div class="bg-black/90 border-4 border-blue-600 p-6 sm:p-10 rounded-none max-w-2xl mx-auto mb-12">
                     <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6">SHOULD WE ADD A<br><span class="text-red-600">1v1 ROOKIE TOURNAMENT?</span><br><span class="text-2xl sm:text-3xl text-blue-600">($25 BUY-IN)</span></h2>
                     <form id="pollForm" class="space-y-6">
@@ -57,15 +55,38 @@
                     </div>
                 </div>
                 
-                <div class="text-2xl sm:text-3xl text-white/80">FIRST EVENT • MAY 9, 2026 • TEXAS LEGENDS PAINTBALL</div>
+                <div class="text-2xl sm:text-3xl text-white/80">FIRST EVENT • MAY 9, 2026 • 3-MAN BRACKETS</div>
                 <div id="countdown" class="text-4xl sm:text-5xl font-mono text-red-600 mt-4"></div>
             </div>
         </div>
     </section>
 
-    <!-- ALL OTHER SECTIONS (already mobile-friendly + minor tweaks) -->
+    <!-- SECTIONS -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
-        <!-- Idea Submission, Forum, Schedule, Rules, Register, About... (kept exactly as before but with tighter mobile spacing) -->
+        
+        <!-- Schedule with 3-Man callout -->
+        <div id="schedule" class="mb-16 sm:mb-24">
+            <h2 class="text-5xl sm:text-6xl text-red-600 mb-8 text-center">2026 SCHEDULE &amp; RESULTS</h2>
+            <p class="text-center text-2xl text-blue-600 mb-8 font-bold">3-MAN TOURNAMENT FORMAT — BEGINNER FRIENDLY</p>
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+                <div class="border-4 border-blue-600 p-6 sm:p-8">
+                    <div class="text-3xl sm:text-4xl">MAY 9</div>
+                    <div class="text-xl sm:text-2xl text-white/80">North Houston • 3-Man Brackets</div>
+                    <div class="text-red-600 text-4xl sm:text-5xl font-black mt-6">POT TBD</div>
+                </div>
+                <div class="border-4 border-blue-600 p-6 sm:p-8">
+                    <div class="text-3xl sm:text-4xl">JUNE 12</div>
+                    <div class="text-xl sm:text-2xl text-white/80">North Houston • 3-Man Brackets</div>
+                    <div class="text-red-600 text-4xl sm:text-5xl font-black mt-6">POT TBD</div>
+                </div>
+                <div class="border-4 border-blue-600 p-6 sm:p-8 opacity-75">
+                    <div class="text-3xl sm:text-4xl">JULY 11</div>
+                    <div class="text-xl sm:text-2xl text-white/80">TBA</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Idea Submission -->
         <div id="ideas" class="mb-16 sm:mb-24">
             <h2 class="text-5xl sm:text-6xl text-red-600 mb-8 text-center">SUBMIT YOUR TOURNAMENT IDEAS</h2>
             <div class="bg-white/10 p-8 sm:p-10 max-w-2xl mx-auto">
@@ -77,6 +98,7 @@
             </div>
         </div>
 
+        <!-- Forum, Rules, Register, About (unchanged except mobile spacing) -->
         <div id="forum" class="mb-16 sm:mb-24">
             <h2 class="text-5xl sm:text-6xl text-red-600 mb-8 text-center">ROOKIE FORUM • SMACK TALK • CARPOOLS • GEAR TRADES</h2>
             <div class="grid md:grid-cols-2 gap-8">
@@ -93,34 +115,9 @@
             </div>
         </div>
 
-        <!-- Schedule, Rules, Register, About sections unchanged except tighter mobile padding (see full file) -->
-
-        <div id="schedule" class="mb-16 sm:mb-24">
-            <h2 class="text-5xl sm:text-6xl text-red-600 mb-8 text-center">2026 SCHEDULE &amp; RESULTS</h2>
-            <div class="grid md:grid-cols-3 gap-6 text-center">
-                <div class="border-4 border-blue-600 p-6 sm:p-8">
-                    <div class="text-3xl sm:text-4xl">MAY 9</div>
-                    <div class="text-xl sm:text-2xl text-white/80">Texas Legends • Brackets TBD</div>
-                    <div class="text-red-600 text-4xl sm:text-5xl font-black mt-6">POT TBD</div>
-                </div>
-                <div class="border-4 border-blue-600 p-6 sm:p-8">
-                    <div class="text-3xl sm:text-4xl">JUNE 12</div>
-                    <div class="text-xl sm:text-2xl text-white/80">Texas Legends • 3-Man Brackets</div>
-                    <div class="text-red-600 text-4xl sm:text-5xl font-black mt-6">POT TBD</div>
-                </div>
-                <div class="border-4 border-blue-600 p-6 sm:p-8 opacity-75">
-                    <div class="text-3xl sm:text-4xl">JULY 11</div>
-                    <div class="text-xl sm:text-2xl text-white/80">TBA</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Rules, Register, About sections follow the same responsive pattern -->
-
         <div id="rules" class="mb-16 sm:mb-24 bg-white/10 p-8 sm:p-12">
             <h2 class="text-5xl sm:text-6xl text-red-600 mb-8 text-center">ROOKIE RULES &amp; FAQ</h2>
             <div class="grid md:grid-cols-2 gap-8 text-lg sm:text-xl leading-relaxed">
-                <!-- content same as before -->
                 <div>
                     <h3 class="font-black text-blue-600 text-3xl mb-6">ENTRY &amp; VERIFICATION</h3>
                     <p class="mb-8">• $50 buy-in (field fee separate)<br>• $10 admin fee<br>• Strictly APPA D5 &amp; below<br>• Free APPA Player ID required at signup + screenshot<br>• Government photo ID required on-site<br>• False info = DQ + no refund</p>
@@ -129,7 +126,7 @@
                 </div>
                 <div>
                     <h3 class="font-black text-blue-600 text-3xl mb-6">FORMAT</h3>
-                    <p>Beginner-friendly • 10-15 min games • 3-man or 5-man brackets • No speedball rules</p>
+                    <p>Beginner-friendly • 10-15 min games • 3-man brackets • No speedball rules</p>
                     <h3 class="font-black text-blue-600 text-3xl mb-6 mt-12">GEAR LIMITS</h3>
                     <p>Stock barrels, no electronic markers over 280fps, rental gear welcome.</p>
                 </div>
@@ -139,7 +136,6 @@
         <div id="register" class="mb-16 sm:mb-24">
             <h2 class="text-5xl sm:text-6xl text-red-600 mb-8 text-center">REGISTER FOR MAY 9 EVENT</h2>
             <form id="regForm" class="max-w-2xl mx-auto bg-white/10 p-8 sm:p-12 space-y-8">
-                <!-- form fields same -->
                 <div class="grid md:grid-cols-2 gap-8">
                     <input type="text" placeholder="Full Name" class="bg-white/10 border-2 border-white p-6 text-2xl" required>
                     <input type="text" placeholder="Team Name (optional)" class="bg-white/10 border-2 border-white p-6 text-2xl">
@@ -182,7 +178,6 @@
     </footer>
 
     <script>
-        // (All JS unchanged - poll, countdown, forum, etc. still work)
         function initTailwind() { tailwind.config = { content: [], theme: { extend: {} } }; }
         initTailwind();
 
