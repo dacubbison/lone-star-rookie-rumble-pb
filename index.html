@@ -56,7 +56,7 @@
         </div>
     </section>
 
-    <!-- STAY UPDATED SIGNUP (now using new endpoint) -->
+    <!-- STAY UPDATED (new endpoint) -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 bg-blue-600/10 border-4 border-blue-600">
         <div class="text-center">
             <h2 class="text-5xl sm:text-6xl font-black text-red-600 mb-4">STAY IN THE RUMBLE</h2>
@@ -67,12 +67,10 @@
                     <input type="email" name="email" placeholder="Email Address" class="bg-white/10 border-2 border-white p-6 text-2xl" required>
                 </div>
                 <input type="tel" name="phone" placeholder="Phone Number" class="w-full bg-white/10 border-2 border-white p-6 text-2xl">
-                
                 <div class="flex flex-col sm:flex-row gap-6 text-left">
                     <label class="flex items-center gap-3 text-xl"><input type="radio" name="contact" value="email" checked class="w-6 h-6 accent-red-600"> Email updates</label>
                     <label class="flex items-center gap-3 text-xl"><input type="radio" name="contact" value="text" class="w-6 h-6 accent-red-600"> Text updates</label>
                 </div>
-                
                 <button type="submit" class="w-full bg-red-600 hover:bg-white hover:text-black py-8 text-4xl font-black transition">JOIN THE LIST</button>
             </form>
         </div>
@@ -107,7 +105,6 @@
             <div class="bg-white/10 p-8 rounded-none">
                 <p class="text-blue-400 text-lg mb-4 font-bold">💬 Got ideas, rule changes, or format suggestions? Post them here! The whole community can discuss and upvote — this is how we make the series better together.</p>
                 <p class="text-blue-400 text-lg mb-6 font-bold">To post or reply, just sign in with a FREE GitHub account (takes 15 seconds to create).</p>
-                
                 <script src="https://utteranc.es/client.js"
                         repo="dacubbison/lone-star-rookie-rumble-pb"
                         issue-term="pathname"
@@ -137,24 +134,11 @@
             </div>
         </div>
 
-        <!-- REGISTER -->
-        <div id="register" class="mb-16 sm:mb-24">
-            <h2 class="text-5xl sm:text-6xl text-red-600 mb-8 text-center">REGISTER FOR MAY 9 EVENT</h2>
-            <form id="regForm" class="max-w-2xl mx-auto bg-white/10 p-8 sm:p-12 space-y-8">
-                <div class="grid md:grid-cols-2 gap-8">
-                    <input type="text" placeholder="Full Name" class="bg-white/10 border-2 border-white p-6 text-2xl" required>
-                    <input type="text" placeholder="Team Name (optional)" class="bg-white/10 border-2 border-white p-6 text-2xl">
-                </div>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <input type="tel" placeholder="Phone" class="bg-white/10 border-2 border-white p-6 text-2xl" required>
-                    <input type="email" placeholder="Email" class="bg-white/10 border-2 border-white p-6 text-2xl" required>
-                </div>
-                <input type="text" placeholder="APPA Player ID (required)" class="w-full bg-white/10 border-2 border-white p-6 text-2xl" required>
-                <div class="text-sm text-white/70">Upload APPA screenshot / profile link below (or email later)</div>
-                <input type="file" class="w-full bg-white/10 border-2 border-white p-6 text-2xl">
-                <button type="submit" class="w-full bg-red-600 hover:bg-blue-600 py-8 text-4xl font-black">PAY $50 &amp; LOCK IN YOUR SPOT</button>
-                <p class="text-center text-white/60 text-sm">Stripe checkout coming soon — for now message us on Instagram @lonestarrookierumble</p>
-            </form>
+        <!-- COMING SOON REGISTRATION -->
+        <div id="register" class="mb-16 sm:mb-24 bg-white/10 p-12 text-center border-4 border-blue-600">
+            <h2 class="text-5xl sm:text-6xl text-red-600 mb-8">REGISTRATION OPENING SOON</h2>
+            <p class="text-3xl text-white mb-8">We’re finalizing the field with Texas Legends and other local spots.<br>Join the updates list above to be the first to know when spots open!</p>
+            <div class="inline-block bg-red-600 text-white px-10 py-6 text-3xl font-black">MAY 9 • $50 BUY-IN • 3-MAN BRACKETS</div>
         </div>
 
         <!-- CONTACT US -->
@@ -210,13 +194,6 @@
         document.getElementById('updateForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert("✅ You're on the list! We'll send you updates to the contact method you chose.");
-            this.reset();
-        });
-
-        // Registration alert
-        document.getElementById('regForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert("✅ Registration received! We'll send you a confirmation to the email you entered. See you on the field, rookie!");
             this.reset();
         });
     </script>
