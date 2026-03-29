@@ -11,6 +11,11 @@
         @import url('https://fonts.googleapis.com/css2?family=Anton&family=Impact:wght@400;700&display=swap');
         body { font-family: 'Impact', system-ui, sans-serif; }
         .hero-bg { background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat; }
+        .forum-title { 
+            text-rendering: optimizeLegibility; 
+            -webkit-font-smoothing: antialiased; 
+            -moz-osx-font-smoothing: grayscale; 
+        }
     </style>
 </head>
 <body class="bg-black text-white">
@@ -69,9 +74,9 @@
             </div>
         </div>
 
-        <!-- REAL FORUM (now the ONLY place for ideas & suggestions) -->
+        <!-- FORUM (ideas live here now) -->
         <div id="forum" class="mb-16 sm:mb-24">
-            <h2 class="text-5xl sm:text-6xl font-black text-red-600 mb-8 text-center tracking-[-2px]">ROOKIE FORUM • SMACK TALK • CARPOOLS • GEAR TRADES</h2>
+            <h2 class="forum-title text-5xl sm:text-6xl font-black text-red-600 mb-8 text-center tracking-[-1.5px]">ROOKIE FORUM • SMACK TALK • CARPOOLS • GEAR TRADES</h2>
             <div class="bg-white/10 p-8 rounded-none">
                 <p class="text-blue-400 text-lg mb-4 font-bold">💬 Got ideas, rule changes, or format suggestions? Post them here! The whole community can discuss and upvote — this is how we make the series better together.</p>
                 <p class="text-blue-400 text-lg mb-6 font-bold">To post or reply, just sign in with a FREE GitHub account (takes 15 seconds to create).</p>
