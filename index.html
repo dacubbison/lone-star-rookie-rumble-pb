@@ -56,6 +56,28 @@
         </div>
     </section>
 
+    <!-- NEW STAY UPDATED SIGNUP SECTION -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 bg-blue-600/10 border-4 border-blue-600">
+        <div class="text-center">
+            <h2 class="text-5xl sm:text-6xl font-black text-red-600 mb-4">STAY IN THE RUMBLE</h2>
+            <p class="text-2xl text-white mb-8">Get updates, event reminders, and early registration links</p>
+            <form id="updateForm" action="https://formspree.io/f/mykbezda" method="POST" class="max-w-xl mx-auto space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" name="name" placeholder="Your Name" class="bg-white/10 border-2 border-white p-6 text-2xl" required>
+                    <input type="email" name="email" placeholder="Email Address" class="bg-white/10 border-2 border-white p-6 text-2xl" required>
+                </div>
+                <input type="tel" name="phone" placeholder="Phone Number" class="w-full bg-white/10 border-2 border-white p-6 text-2xl">
+                
+                <div class="flex flex-col sm:flex-row gap-6 text-left">
+                    <label class="flex items-center gap-3 text-xl"><input type="radio" name="contact" value="email" checked class="w-6 h-6 accent-red-600"> Email updates</label>
+                    <label class="flex items-center gap-3 text-xl"><input type="radio" name="contact" value="text" class="w-6 h-6 accent-red-600"> Text updates</label>
+                </div>
+                
+                <button type="submit" class="w-full bg-red-600 hover:bg-white hover:text-black py-8 text-4xl font-black transition">JOIN THE LIST</button>
+            </form>
+        </div>
+    </div>
+
     <!-- SCHEDULE -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
         <div id="schedule" class="mb-16 sm:mb-24">
@@ -135,7 +157,7 @@
             </form>
         </div>
 
-        <!-- CONTACT US (new) -->
+        <!-- CONTACT US -->
         <div id="contact" class="mb-16 sm:mb-24 bg-white/10 p-8 sm:p-12 text-center">
             <h2 class="text-5xl sm:text-6xl text-red-600 mb-8">CONTACT US</h2>
             <p class="text-2xl mb-6">Questions? Ideas? Just want to say what’s up?</p>
@@ -183,6 +205,13 @@
             }, 1000);
         }
         countdown();
+
+        // New signup form
+        document.getElementById('updateForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("✅ You're on the list! We'll send you updates to the contact method you chose.");
+            this.reset();
+        });
 
         document.getElementById('regForm').addEventListener('submit', function(e) {
             e.preventDefault();
