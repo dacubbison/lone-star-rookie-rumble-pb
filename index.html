@@ -27,7 +27,7 @@
         </div>
     </nav>
 
-    <!-- HERO + WORKING 1v1 SURVEY (NO REPEAT VOTES) -->
+    <!-- HERO + REAL SHARED 1v1 POLL -->
     <section id="home" class="hero-bg min-h-screen flex items-center pt-16 pb-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
             <div class="max-w-4xl mx-auto">
@@ -38,24 +38,12 @@
                 <div class="bg-black/90 border-4 border-blue-600 p-6 sm:p-10 rounded-none max-w-2xl mx-auto mb-12">
                     <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6">SHOULD WE ADD A<br><span class="text-red-600">1v1 ROOKIE TOURNAMENT?</span><br><span class="text-2xl sm:text-3xl text-blue-600">($25 BUY-IN)</span></h2>
                     
-                    <form id="pollForm" class="space-y-6">
-                        <div id="pollOptions" class="flex flex-col gap-4 text-left text-xl sm:text-2xl">
-                            <label class="flex items-center gap-4 cursor-pointer"><input type="radio" name="vote" value="join" class="w-7 h-7 accent-red-600"><span>YES — I would JOIN</span></label>
-                            <label class="flex items-center gap-4 cursor-pointer"><input type="radio" name="vote" value="watch" class="w-7 h-7 accent-red-600"><span>YES — I would WATCH</span></label>
-                            <label class="flex items-center gap-4 cursor-pointer"><input type="radio" name="vote" value="nah" class="w-7 h-7 accent-red-600"><span>NAH, not really interested</span></label>
-                        </div>
-                        <button type="submit" id="pollSubmitBtn" class="w-full bg-red-600 hover:bg-blue-600 text-2xl sm:text-3xl font-black py-5 sm:py-6 transition">SUBMIT VOTE</button>
-                    </form>
-
-                    <div id="pollResults" class="hidden mt-8">
-                        <h3 class="text-2xl font-black mb-6 text-white">LIVE RESULTS — TEXAS HAS SPOKEN</h3>
-                        <div id="resultsBars" class="space-y-6"></div>
-                        <button onclick="resetPoll()" class="mt-8 text-blue-600 underline text-lg">Vote again</button>
-                    </div>
-
+                    <!-- REAL SHARED STRAWPOLL -->
+                    <iframe src="https://strawpoll.com/embed/QrgewMA4Oyp" width="100%" height="480" style="border:none;" allow="autoplay"></iframe>
+                    
                     <div class="mt-10 border-t border-white/30 pt-8">
                         <h3 class="text-xl mb-4">Other ideas for the series?</h3>
-                        <form id="ideaForm" action="https://formspree.io/f/xblrjrdv" method="POST">
+                        <form id="ideaForm" action="https://formspree.io/f/mykbezda" method="POST">
                             <textarea name="idea" rows="3" class="w-full bg-white/10 border-2 border-white p-4 text-white text-lg" placeholder="E.g. 2v2, night games, gear swaps..."></textarea>
                             <button type="submit" class="mt-4 bg-blue-600 hover:bg-red-600 px-10 py-4 text-lg font-bold">SEND IDEA</button>
                         </form>
@@ -91,11 +79,11 @@
             </div>
         </div>
 
-        <!-- IDEA SUBMISSION -->
+        <!-- SINGLE IDEA SUBMISSION (duplicate removed) -->
         <div id="ideas" class="mb-16 sm:mb-24">
             <h2 class="text-5xl sm:text-6xl text-red-600 mb-8 text-center">SUBMIT YOUR TOURNAMENT IDEAS</h2>
             <div class="bg-white/10 p-8 sm:p-10 max-w-2xl mx-auto">
-                <form id="fullIdeaForm" action="https://formspree.io/f/xblrjrdv" method="POST">
+                <form id="fullIdeaForm" action="https://formspree.io/f/mykbezda" method="POST">
                     <input type="text" name="name" placeholder="Your Name" class="w-full mb-4 bg-white/10 border border-white p-5 text-xl" required>
                     <textarea name="suggestion" placeholder="Format ideas, rule changes, website features..." class="w-full h-48 bg-white/10 border border-white p-5 text-xl" required></textarea>
                     <button type="submit" class="mt-6 w-full bg-red-600 hover:bg-blue-600 py-6 text-3xl font-black">SEND TO THE ORGANIZER</button>
@@ -103,24 +91,21 @@
             </div>
         </div>
 
-        <!-- FORUM -->
+        <!-- REAL REDDIT-STYLE FORUM (Utterances) -->
         <div id="forum" class="mb-16 sm:mb-24">
             <h2 class="text-5xl sm:text-6xl text-red-600 mb-8 text-center">ROOKIE FORUM • SMACK TALK • CARPOOLS • GEAR TRADES</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white/10 p-8">
-                    <h3 class="text-3xl mb-6">Latest Posts</h3>
-                    <div id="postsContainer" class="space-y-6"></div>
-                </div>
-                <div>
-                    <h3 class="text-3xl mb-6">Post Something</h3>
-                    <input id="postAuthor" type="text" placeholder="Your name / team" class="w-full mb-4 bg-white/10 border border-white p-5">
-                    <textarea id="postMessage" placeholder="What's on your mind, rookies?" class="w-full h-40 bg-white/10 border border-white p-5 mb-4"></textarea>
-                    <button onclick="addPost()" class="w-full bg-blue-600 hover:bg-red-600 py-6 text-3xl font-black">POST TO FORUM</button>
-                </div>
+            <div class="bg-white/10 p-8 rounded-none">
+                <script src="https://utteranc.es/client.js"
+                        repo="dacubbison/lone-star-rookie-rumble-pb"
+                        issue-term="pathname"
+                        label="forum"
+                        theme="github-dark"
+                        crossorigin="anonymous"
+                        async></script>
             </div>
         </div>
 
-        <!-- RULES -->
+        <!-- RULES, REGISTER, ABOUT, FOOTER (unchanged) -->
         <div id="rules" class="mb-16 sm:mb-24 bg-white/10 p-8 sm:p-12">
             <h2 class="text-5xl sm:text-6xl text-red-600 mb-8 text-center">ROOKIE RULES &amp; FAQ</h2>
             <div class="grid md:grid-cols-2 gap-8 text-lg sm:text-xl leading-relaxed">
@@ -139,7 +124,6 @@
             </div>
         </div>
 
-        <!-- REGISTER -->
         <div id="register" class="mb-16 sm:mb-24">
             <h2 class="text-5xl sm:text-6xl text-red-600 mb-8 text-center">REGISTER FOR MAY 9 EVENT</h2>
             <form id="regForm" class="max-w-2xl mx-auto bg-white/10 p-8 sm:p-12 space-y-8">
@@ -159,7 +143,6 @@
             </form>
         </div>
 
-        <!-- ABOUT -->
         <div id="about" class="grid md:grid-cols-2 gap-8">
             <div>
                 <h3 class="text-3xl text-blue-600">ABOUT US</h3>
@@ -182,56 +165,14 @@
             <a href="#" class="hover:text-red-600"><i class="fa-brands fa-instagram"></i></a>
             <a href="#" class="hover:text-red-600"><i class="fa-brands fa-facebook"></i></a>
         </div>
-        <p class="mt-8 text-sm">Built as a single-file static site on Vercel • Questions? david@toptechmobile.com</p>
+        <p class="mt-8 text-sm">Built as a single-file static site on Vercel • Questions? dacubbison@gmail.com</p>
     </footer>
 
     <script>
         function initTailwind() { tailwind.config = { content: [], theme: { extend: {} } }; }
         initTailwind();
 
-        // FIXED POLL - NO REPEAT VOTES + LIVE RESULTS
-        let hasVoted = localStorage.getItem('hasVotedPoll') === 'true';
-        let votes = JSON.parse(localStorage.getItem('pollVotes')) || { join: 12, watch: 8, nah: 3 };
-
-        function renderResults() {
-            const total = votes.join + votes.watch + votes.nah;
-            const container = document.getElementById('resultsBars');
-            container.innerHTML = `
-                <div class="space-y-4 text-left">
-                    <div><div class="flex justify-between text-sm mb-1"><span>YES — I would JOIN</span><span>${Math.round(votes.join/total*100)}%</span></div><div class="h-4 bg-blue-600 rounded" style="width: ${votes.join/total*100}%"></div></div>
-                    <div><div class="flex justify-between text-sm mb-1"><span>YES — I would WATCH</span><span>${Math.round(votes.watch/total*100)}%</span></div><div class="h-4 bg-red-600 rounded" style="width: ${votes.watch/total*100}%"></div></div>
-                    <div><div class="flex justify-between text-sm mb-1"><span>NAH, not really interested</span><span>${Math.round(votes.nah/total*100)}%</span></div><div class="h-4 bg-white/30 rounded" style="width: ${votes.nah/total*100}%"></div></div>
-                </div>
-                <p class="text-center text-white/70 mt-6">${total} total votes</p>
-            `;
-        }
-
-        if (hasVoted) {
-            document.getElementById('pollOptions').classList.add('hidden');
-            document.getElementById('pollSubmitBtn').classList.add('hidden');
-            document.getElementById('pollResults').classList.remove('hidden');
-            renderResults();
-        }
-
-        document.getElementById('pollForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const selected = document.querySelector('input[name="vote"]:checked');
-            if (!selected) return;
-            votes[selected.value]++;
-            localStorage.setItem('pollVotes', JSON.stringify(votes));
-            localStorage.setItem('hasVotedPoll', 'true');
-            document.getElementById('pollOptions').classList.add('hidden');
-            document.getElementById('pollSubmitBtn').classList.add('hidden');
-            document.getElementById('pollResults').classList.remove('hidden');
-            renderResults();
-        });
-
-        function resetPoll() {
-            localStorage.removeItem('hasVotedPoll');
-            location.reload();
-        }
-
-        // COUNTDOWN
+        // Countdown
         function countdown() {
             const eventDate = new Date('2026-05-09T09:00:00').getTime();
             setInterval(() => {
@@ -243,33 +184,7 @@
         }
         countdown();
 
-        // FORUM
-        let posts = JSON.parse(localStorage.getItem('forumPosts')) || [
-            {author: "BarrelBurner87", msg: "Anyone carpooling from The Woodlands?"},
-            {author: "RookieRageTX", msg: "First time player — what marker should I rent?"}
-        ];
-        function renderPosts() {
-            const container = document.getElementById('postsContainer');
-            container.innerHTML = '';
-            posts.forEach(p => {
-                const div = document.createElement('div');
-                div.className = 'bg-white/10 p-6 border-l-4 border-red-600 text-xl leading-tight';
-                div.innerHTML = `<strong class="text-2xl text-red-600">${p.author}</strong><p class="mt-2 text-white">${p.msg}</p>`;
-                container.appendChild(div);
-            });
-        }
-        function addPost() {
-            const author = document.getElementById('postAuthor').value.trim() || 'Anonymous Rookie';
-            const msg = document.getElementById('postMessage').value.trim();
-            if (!msg) return;
-            posts.unshift({author, msg});
-            localStorage.setItem('forumPosts', JSON.stringify(posts));
-            renderPosts();
-            document.getElementById('postMessage').value = '';
-        }
-        renderPosts();
-
-        // REGISTRATION
+        // Registration alert
         document.getElementById('regForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert("✅ Registration received! We'll send you a confirmation to the email you entered. See you on the field, rookie!");
