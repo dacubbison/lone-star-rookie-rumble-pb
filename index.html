@@ -56,12 +56,12 @@
         </div>
     </section>
 
-    <!-- NEW STAY UPDATED SIGNUP SECTION -->
+    <!-- STAY UPDATED SIGNUP (now using new endpoint) -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 bg-blue-600/10 border-4 border-blue-600">
         <div class="text-center">
             <h2 class="text-5xl sm:text-6xl font-black text-red-600 mb-4">STAY IN THE RUMBLE</h2>
             <p class="text-2xl text-white mb-8">Get updates, event reminders, and early registration links</p>
-            <form id="updateForm" action="https://formspree.io/f/mykbezda" method="POST" class="max-w-xl mx-auto space-y-6">
+            <form id="updateForm" action="https://formspree.io/f/mzdkeael" method="POST" class="max-w-xl mx-auto space-y-6">
                 <div class="grid md:grid-cols-2 gap-6">
                     <input type="text" name="name" placeholder="Your Name" class="bg-white/10 border-2 border-white p-6 text-2xl" required>
                     <input type="email" name="email" placeholder="Email Address" class="bg-white/10 border-2 border-white p-6 text-2xl" required>
@@ -206,13 +206,14 @@
         }
         countdown();
 
-        // New signup form
+        // Stay Updated form
         document.getElementById('updateForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert("✅ You're on the list! We'll send you updates to the contact method you chose.");
             this.reset();
         });
 
+        // Registration alert
         document.getElementById('regForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert("✅ Registration received! We'll send you a confirmation to the email you entered. See you on the field, rookie!");
