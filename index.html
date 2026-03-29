@@ -27,7 +27,7 @@
         </div>
     </nav>
 
-    <!-- HERO + REAL SHARED 1v1 POLL -->
+    <!-- HERO + REAL SHARED POLL -->
     <section id="home" class="hero-bg min-h-screen flex items-center pt-16 pb-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
             <div class="max-w-4xl mx-auto">
@@ -37,8 +37,6 @@
                 
                 <div class="bg-black/90 border-4 border-blue-600 p-6 sm:p-10 rounded-none max-w-2xl mx-auto mb-12">
                     <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6">SHOULD WE ADD A<br><span class="text-red-600">1v1 ROOKIE TOURNAMENT?</span><br><span class="text-2xl sm:text-3xl text-blue-600">($25 BUY-IN)</span></h2>
-                    
-                    <!-- REAL SHARED STRAWPOLL -->
                     <iframe src="https://strawpoll.com/embed/QrgewMA4Oyp" width="100%" height="480" style="border:none;" allow="autoplay"></iframe>
                     
                     <div class="mt-10 border-t border-white/30 pt-8">
@@ -56,7 +54,7 @@
         </div>
     </section>
 
-    <!-- SCHEDULE -->
+    <!-- SCHEDULE, IDEAS, RULES, REGISTER, ABOUT (unchanged) -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
         <div id="schedule" class="mb-16 sm:mb-24">
             <h2 class="text-5xl sm:text-6xl text-red-600 mb-8 text-center">2026 SCHEDULE &amp; RESULTS</h2>
@@ -79,7 +77,6 @@
             </div>
         </div>
 
-        <!-- SINGLE IDEA SUBMISSION (duplicate removed) -->
         <div id="ideas" class="mb-16 sm:mb-24">
             <h2 class="text-5xl sm:text-6xl text-red-600 mb-8 text-center">SUBMIT YOUR TOURNAMENT IDEAS</h2>
             <div class="bg-white/10 p-8 sm:p-10 max-w-2xl mx-auto">
@@ -91,10 +88,13 @@
             </div>
         </div>
 
-        <!-- REAL REDDIT-STYLE FORUM (Utterances) -->
+        <!-- FORUM WITH FRIENDLY GITHUB NOTE -->
         <div id="forum" class="mb-16 sm:mb-24">
             <h2 class="text-5xl sm:text-6xl text-red-600 mb-8 text-center">ROOKIE FORUM • SMACK TALK • CARPOOLS • GEAR TRADES</h2>
             <div class="bg-white/10 p-8 rounded-none">
+                <!-- Friendly GitHub note -->
+                <p class="text-blue-400 text-lg mb-4 font-bold">💬 To post or reply, just sign in with a FREE GitHub account (takes 15 seconds — most rookies already have one or can make one instantly).</p>
+                
                 <script src="https://utteranc.es/client.js"
                         repo="dacubbison/lone-star-rookie-rumble-pb"
                         issue-term="pathname"
@@ -105,7 +105,6 @@
             </div>
         </div>
 
-        <!-- RULES, REGISTER, ABOUT, FOOTER (unchanged) -->
         <div id="rules" class="mb-16 sm:mb-24 bg-white/10 p-8 sm:p-12">
             <h2 class="text-5xl sm:text-6xl text-red-600 mb-8 text-center">ROOKIE RULES &amp; FAQ</h2>
             <div class="grid md:grid-cols-2 gap-8 text-lg sm:text-xl leading-relaxed">
@@ -172,7 +171,6 @@
         function initTailwind() { tailwind.config = { content: [], theme: { extend: {} } }; }
         initTailwind();
 
-        // Countdown
         function countdown() {
             const eventDate = new Date('2026-05-09T09:00:00').getTime();
             setInterval(() => {
@@ -184,7 +182,6 @@
         }
         countdown();
 
-        // Registration alert
         document.getElementById('regForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert("✅ Registration received! We'll send you a confirmation to the email you entered. See you on the field, rookie!");
