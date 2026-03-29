@@ -32,7 +32,7 @@
                 <a href="https://www.instagram.com/lonestarrookierumble" target="_blank" class="text-white hover:text-red-600">
                     <i class="fa-brands fa-instagram text-3xl"></i>
                 </a>
-                <a href="#register" class="bg-red-600 hover:bg-blue-600 px-6 py-3 text-lg font-bold rounded-none transition">REGISTER NOW — $50</a>
+                <a href="#updates" class="bg-red-600 hover:bg-blue-600 px-6 py-3 text-lg font-bold rounded-none transition">JOIN THE LIST</a>
             </div>
         </div>
     </nav>
@@ -56,8 +56,8 @@
         </div>
     </section>
 
-    <!-- STAY UPDATED (new endpoint) -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 bg-blue-600/10 border-4 border-blue-600">
+    <!-- STAY UPDATED (new endpoint + id for nav link) -->
+    <div id="updates" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 bg-blue-600/10 border-4 border-blue-600">
         <div class="text-center">
             <h2 class="text-5xl sm:text-6xl font-black text-red-600 mb-4">STAY IN THE RUMBLE</h2>
             <p class="text-2xl text-white mb-8">Get updates, event reminders, and early registration links</p>
@@ -189,13 +189,6 @@
             }, 1000);
         }
         countdown();
-
-        // Stay Updated form
-        document.getElementById('updateForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert("✅ You're on the list! We'll send you updates to the contact method you chose.");
-            this.reset();
-        });
     </script>
 </body>
 </html>
